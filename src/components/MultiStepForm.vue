@@ -84,7 +84,7 @@
         <div class="mt-4">
           <button
             @click="closeModal"
-            class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+            class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-100 text-blue-800 hover:bg-blue-200 focus:outline-none focus:bg-blue-200 disabled:opacity-50 disabled:pointer-events-none"
           >
             Close
           </button>
