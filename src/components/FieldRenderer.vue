@@ -1,6 +1,6 @@
 <template>
   <div>
-    <label class="block mb-1 font-medium text-gray-700">{{
+    <label class="block mb-1 font-medium text-xs text-gray-700">{{
       field.label
     }}</label>
 
@@ -21,7 +21,7 @@
       class="py-3 px-4 block w-full border border-gray-200 rounded-lg text-sm focus:outline-none focus:outline-blue-500 disabled:opacity-50 disabled:pointer-events-none"
     ></textarea>
 
-    <!-- Input Radio (Horizontal Layout) -->
+    <!-- Input Radio -->
     <div v-else-if="field.type === 'radio'" class="space-x-4 flex items-center">
       <div
         v-for="(option, index) in field.options"
@@ -45,7 +45,6 @@
         v-model="localValue"
         class="py-3 px-4 pe-9 block w-full border border-gray-200 rounded-lg text-sm focus:outline-none focus:outline-blue-500 disabled:opacity-50 disabled:pointer-events-none"
       >
-        <!-- Placeholder Option: Tampil Pertama Kali Sebelum Pilihan -->
         <option value="" disabled class="text-gray-400">
           {{ field.placeholder }}
         </option>
