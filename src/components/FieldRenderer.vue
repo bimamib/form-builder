@@ -21,8 +21,8 @@
       class="block w-full mt-1 border-gray-300 rounded-md shadow-sm form-textarea"
     ></textarea>
 
-    <!-- Input Radio -->
-    <div v-else-if="field.type === 'radio'" class="space-y-2">
+    <!-- Input Radio (Horizontal Layout) -->
+    <div v-else-if="field.type === 'radio'" class="space-x-4 flex items-center">
       <div
         v-for="(option, index) in field.options"
         :key="index"
