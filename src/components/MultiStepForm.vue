@@ -51,6 +51,47 @@
         </button>
       </div>
     </form>
+
+    <!-- Modal Alert -->
+    <div
+      v-if="formSubmitted"
+      class="fixed inset-0 flex items-center justify-center bg-gray-600 bg-opacity-50 z-50"
+    >
+      <div class="bg-white p-6 rounded-lg shadow-lg w-96">
+        <div class="flex justify-between items-center">
+          <h3 class="text-lg font-semibold text-gray-800">
+            Form Submitted Successfully
+          </h3>
+          <button @click="closeModal" class="text-gray-500 hover:text-gray-800">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+        <p class="mt-2 text-gray-600">
+          Your form data has been submitted successfully! We will get back to
+          you shortly.
+        </p>
+        <div class="mt-4">
+          <button
+            @click="closeModal"
+            class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -67,6 +108,7 @@ export default {
       formData: {}, // Data untuk menyimpan input pengguna
       currentStep: 1, // Menyimpan langkah yang aktif
       formConfig: formData, // Konfigurasi langkah-langkah
+      formSubmitted: false, // Flag untuk menampilkan modal
     };
   },
   computed: {
@@ -90,7 +132,10 @@ export default {
     },
     handleSubmit() {
       console.log("Submitted Data:", this.formData); // Kirim data form
-      alert("Form submitted successfully!");
+      this.formSubmitted = true; // Menandai bahwa form telah disubmit
+    },
+    closeModal() {
+      this.formSubmitted = false; // Menutup modal
     },
   },
 };
