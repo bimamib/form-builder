@@ -31,21 +31,21 @@
         <button
           v-if="currentStep > 1"
           @click="prevStep"
-          class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+          class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-100 text-blue-800 hover:bg-blue-200 focus:outline-none focus:bg-blue-200 disabled:opacity-50 disabled:pointer-events-none"
         >
-          Previous
+          Back
         </button>
         <button
           v-if="currentStep < totalSteps"
           @click="nextStep"
-          class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+          class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-100 text-blue-800 hover:bg-blue-200 focus:outline-none focus:bg-blue-200 disabled:opacity-50 disabled:pointer-events-none"
         >
           Next
         </button>
         <button
           v-if="currentStep === totalSteps"
           type="submit"
-          class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
+          class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-green-100 text-green-800 hover:bg-green-200 focus:outline-none focus:bg-green-200 disabled:opacity-50 disabled:pointer-events-none"
         >
           Submit
         </button>
