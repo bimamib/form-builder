@@ -60,28 +60,27 @@
       <div class="bg-white p-6 rounded-lg shadow-lg w-96">
         <div class="flex justify-between items-center">
           <h3 class="text-lg font-semibold text-gray-800">
-            Form Submitted Successfully
+            Form Data Submitted
           </h3>
-          <button @click="closeModal" class="text-gray-500 hover:text-gray-800">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M6 18L18 6M6 6l12 12"></path>
-            </svg>
-          </button>
+          <button
+            @click="closeModal"
+            class="text-gray-500 hover:text-gray-800"
+          ></button>
         </div>
         <p class="mt-2 text-gray-600">
-          Your form data has been submitted successfully! We will get back to
-          you shortly.
+          Berikut adalah data yang telah Anda masukkan:
         </p>
+        <div class="mt-4">
+          <ul class="list-disc pl-5 space-y-2">
+            <li
+              v-for="(value, key) in formData"
+              :key="key"
+              class="text-gray-700"
+            >
+              <strong>{{ key }}:</strong> {{ value || "Tidak diisi" }}
+            </li>
+          </ul>
+        </div>
         <div class="mt-4">
           <button
             @click="closeModal"
