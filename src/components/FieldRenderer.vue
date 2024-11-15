@@ -10,7 +10,7 @@
       v-model="localValue"
       :placeholder="field.placeholder"
       type="text"
-      class="block w-full px-3 py-2 text-sm border border-gray-200 rounded-lg focus:outline-none focus:outline-blue-500 disabled:opacity-50 disabled:pointer-events-none"
+      class="block w-full px-4 py-3 text-sm border border-gray-200 rounded-lg focus:outline-none focus:outline-blue-500 disabled:opacity-50 disabled:pointer-events-none"
     />
 
     <!-- Input Textarea -->
@@ -18,7 +18,7 @@
       v-else-if="field.type === 'textarea'"
       v-model="localValue"
       :placeholder="field.placeholder"
-      class="block w-full mt-1 border-gray-300 rounded-md shadow-sm form-textarea"
+      class="py-3 px-4 block w-full border border-gray-200 rounded-lg text-sm focus:outline-none focus:outline-blue-500 disabled:opacity-50 disabled:pointer-events-none"
     ></textarea>
 
     <!-- Input Radio (Horizontal Layout) -->
@@ -43,7 +43,7 @@
     <div v-else-if="field.type === 'autocomplete'" class="space-y-2">
       <select
         v-model="localValue"
-        class="block w-full mt-1 border-gray-300 rounded-md shadow-sm form-select"
+        class="py-3 px-4 pe-9 block w-full border border-gray-200 rounded-lg text-sm focus:outline-none focus:outline-blue-500 disabled:opacity-50 disabled:pointer-events-none"
       >
         <!-- Placeholder Option: Tampil Pertama Kali Sebelum Pilihan -->
         <option value="" disabled class="text-gray-400">
