@@ -95,7 +95,7 @@
 </template>
 
 <script>
-import formData from "../data/formData"; // Pastikan data JSON ada di sini
+import formData from "../data/formData";
 import FieldRenderer from "./FieldRenderer.vue";
 
 export default {
@@ -139,7 +139,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-/* Tambahkan styling jika diperlukan */
-</style>
