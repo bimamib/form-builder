@@ -1,8 +1,8 @@
 <template>
   <div>
-    <label class="block mb-1 font-medium text-xs text-gray-700">{{
-      field.label
-    }}</label>
+    <label class="block mb-1 text-xs font-medium text-gray-700">
+      {{ field.label }}
+    </label>
 
     <!-- Input Text -->
     <input
@@ -18,24 +18,31 @@
       v-else-if="field.type === 'textarea'"
       v-model="localValue"
       :placeholder="field.placeholder"
-      class="py-3 px-4 block w-full border border-gray-200 rounded-lg text-sm focus:outline-none focus:outline-blue-500 disabled:opacity-50 disabled:pointer-events-none"
+      class="block w-full px-4 py-3 text-sm border border-gray-200 rounded-lg focus:outline-none focus:outline-blue-500 disabled:opacity-50 disabled:pointer-events-none"
     ></textarea>
 
     <!-- Input Radio -->
-    <div v-else-if="field.type === 'radio'" class="space-x-4 flex items-center">
+    <div v-else-if="field.type === 'radio'" class="flex items-center space-x-4">
       <div
         v-for="(option, index) in field.options"
         :key="index"
         class="flex items-center"
       >
-        <input
-          type="radio"
-          :name="field.label"
-          :value="option.value"
-          v-model="localValue"
-          class="w-4 h-4 text-blue-600 form-radio"
-        />
-        <span class="ml-2">{{ option.label }}</span>
+        <!-- Wrap the radio button in a label to make the text clickable -->
+        <label
+          :for="'radio-' + field.label + '-' + index"
+          class="flex items-center cursor-pointer"
+        >
+          <input
+            type="radio"
+            :id="'radio-' + field.label + '-' + index"
+            :name="field.label"
+            :value="option.value"
+            v-model="localValue"
+            class="w-4 h-4 text-blue-600 form-radio"
+          />
+          <span class="ml-2">{{ option.label }}</span>
+        </label>
       </div>
     </div>
 
@@ -43,7 +50,7 @@
     <div v-else-if="field.type === 'autocomplete'" class="space-y-2">
       <select
         v-model="localValue"
-        class="py-3 px-4 pe-9 block w-full border border-gray-200 rounded-lg text-sm focus:outline-none focus:outline-blue-500 disabled:opacity-50 disabled:pointer-events-none"
+        class="block w-full px-4 py-3 text-sm border border-gray-200 rounded-lg pe-9 focus:outline-none focus:outline-blue-500 disabled:opacity-50 disabled:pointer-events-none"
       >
         <option value="" disabled class="text-gray-400">
           {{ field.placeholder }}
@@ -74,7 +81,7 @@ export default {
   computed: {
     localValue: {
       get() {
-        return this.modelValue;
+        return this.modelValue; // Mengambil nilai dari parent
       },
       set(value) {
         this.$emit("update:modelValue", value); // Emit event binding dua arah
