@@ -10,7 +10,7 @@
       v-model="localValue"
       :placeholder="field.placeholder"
       type="text"
-      class="block w-full px-4 py-3 text-sm border border-gray-200 rounded-lg focus:outline-none focus:outline-blue-500 disabled:opacity-50 disabled:pointer-events-none"
+      class="block w-full px-4 py-2 text-sm border border-gray-200 rounded-lg focus:outline-none focus:outline-blue-500 disabled:opacity-50 disabled:pointer-events-none"
     />
 
     <!-- Input Textarea -->
@@ -50,7 +50,7 @@
     <div v-else-if="field.type === 'autocomplete'" class="space-y-2">
       <select
         v-model="localValue"
-        class="block w-full px-4 py-3 text-sm border border-gray-200 rounded-lg pe-9 focus:outline-none focus:outline-blue-500 disabled:opacity-50 disabled:pointer-events-none"
+        class="block w-full px-4 py-2 text-sm border border-gray-200 rounded-lg pe-9 focus:outline-none focus:outline-blue-500 disabled:opacity-50 disabled:pointer-events-none"
       >
         <option value="" disabled class="text-gray-400">
           {{ field.placeholder }}
