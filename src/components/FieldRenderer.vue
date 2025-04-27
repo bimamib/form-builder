@@ -1,6 +1,6 @@
 <template>
   <div>
-    <label class="block mb-1 text-xs text-gray-700 font-large">
+    <label class="block mb-1 text-xs font-medium text-gray-700">
       {{ field.label }}
     </label>
 
